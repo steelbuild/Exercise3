@@ -1,7 +1,12 @@
 pool:
   vmImage: 'windows-2019'
 
+variables:
+  - group: 'Secure Variable Group'
+
 steps:
   - powershell: ./build.ps1
     displayName: 'Build'
+    env:
+      API_KEY: $(API_KEY)
     
